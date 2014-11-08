@@ -1,0 +1,20 @@
+{
+    "name": "ubersort",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/whawker/ubersort.git"
+    },
+    "version": "0.0.1",
+    "devDependencies": {
+        "grunt": "*",
+        "grunt-bower-task": "*",
+        "grunt-cli": "*",
+        "grunt-contrib-connect": "*",
+        "grunt-contrib-jasmine": "~0.8",
+        "grunt-contrib-jshint": "*",
+        "grunt-contrib-uglify": "~0.6",
+        "grunt-plato": "*",
+        "grunt-template-jasmine-requirejs": "~0.2",
+        "grunt-template-jasmine-istanbul": "~0.3"
+    }
+}

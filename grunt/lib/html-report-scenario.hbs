@@ -1,0 +1,32 @@
+<div class="feature jq-toggle jq-toggle-opened">
+    <div class="scenario jq-toggle jq-toggle-opened">
+        <ul class="tags">
+            {{#each tags}}
+            <li>@{{this}}</li>
+            {{/each}}
+        </ul>
+        <h3>
+            <span class="keyword">Scenario: </span>
+            <span class="title">{{title}}</span>
+            <span class="path">{{feature}}:{{line}}</span>
+        </h3>
+        <ol>
+            {{#each steps}}
+                <li class="{{status}}" title="{{startTime}}">
+                    <div class="step">
+                        <span class="keyword">{{type}}</span>
+                        <span class="text"><strong>{{text}}</strong></span>
+                        <span class="path">{{path}}</span>
+                    </div>
+                    {{#if exception}}
+                        <pre class="backtrace">{{exception}}</pre>
+                    {{/if}}
+                </li>
+            {{/each}}
+            <li class="failed"><a href="{{errorDetail.pageDump}}">[html]</a></li>
+            {{#if errorDetail.jsErrors}}<li class="failed">Window Errors: <pre>{{errorDetail.jsErrors}}</pre></li>{{/if}}
+            <li class="failed"><img src="{{errorDetail.screenshot}}" title="{{errorDetail.pageUrl}}"></li>
+
+        </ol>
+    </div>
+</div>

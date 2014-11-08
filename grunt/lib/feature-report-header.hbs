@@ -1,0 +1,114 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>Parallel Behat Report</title>
+    <style>
+        body {
+            font-family: Courier, mono;
+        }
+
+        section.summary dt {
+            float: left;
+            clear: left;
+            width: 100px;
+            text-align: right;
+            font-weight: bold;
+        }
+
+        section.summary dd {
+            margin-left: 105px;
+        }
+
+        #timeline table {
+            border-spacing: 0;
+        }
+        #timeline th {
+            text-align: left;
+            border-right: 1px solid #ccc;
+        }
+        #timeline td {
+            display: block;
+            position: relative;
+        }
+        #timeline tr:hover {
+            background-color: #5EECFF;
+        }
+        @keyframes pending {
+            0% { background-color: #ccc; }
+            50% { background-color: #fff; }
+            100% { background-color: #ccc; }
+        }
+        @-webkit-keyframes pending {
+            0% { background-color: #ccc; }
+            50% { background-color: #fff; }
+            100% { background-color: #ccc; }
+        }
+        #timeline td div {
+            border: 1px solid #ccc;
+            background-color: #eee;
+            height: 14px;
+            margin: 2px;
+            overflow: hidden;
+            font-size: 12px;
+        }
+        #timeline div.pending, span.pending {
+            animation: pending 2s infinite;
+            -webkit-animation: pending 2s infinite;
+        }
+        #timeline div.succeeded, span.succeeded {
+            background-color: #72AA00;
+        }
+        #timeline div.failed, span.failed {
+            background-color: #f6290c;
+        }
+        #timeline div.skipped, span.skipped {
+            background-color: #bbb;
+        }
+        @keyframes forceKillTimeout {
+            0% { background-color: #f6290c; }
+            50% { background-color: #f8b500; }
+            100% { background-color: #f6290c; }
+        }
+        @-webkit-keyframes forceKillTimeout {
+            0% { background-color: #f6290c; }
+            50% { background-color: #f8b500; }
+            100% { background-color: #f6290c; }
+        }
+        #timeline div.forceKillTimeout, span.forceKillTimeout {
+            animation: forceKillTimeout 1s infinite;
+            -webkit-animation: forceKillTimeout 1s infinite;
+        }
+    </style>
+</head>
+<body>
+    <h1>Report started: {{startTime}}</h1>
+    <section class="summary">
+        <dl>
+            <dt>Features:</dt>
+            <dd>{{total}}</dd>
+
+            <dt>Ok:</dt>
+            <dd>{{ok}}</dd>
+
+            <dt>Retries:</dt>
+            <dd>{{retries}}</dd>
+
+            <dt>Killed:</dt>
+            <dd>{{#unless killed}}None{{/unless}}</dd>
+            {{#each killedTasks}}
+                <dd>{{this.filename}}
+                    {{#each results}}
+                        <span class="{{status}}">[{{status}}]</span>
+                    {{/each}}
+                </dd>
+            {{/each}}
+        </dl>
+    </section>
+    <div id="timeline">
+        <table>
+        {{{content}}}
+        </table>
+    </div>
+    <p>Last updated: {{lastUpdated}}</p>
+</body>
+</html>

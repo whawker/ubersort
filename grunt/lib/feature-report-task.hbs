@@ -1,0 +1,11 @@
+<tr data-id={{id}}>
+	<th>{{filename}}</th>
+	<td>
+		{{#each results}}
+			<div data-role="result" class="{{getResultStatus}}" style="{{getResultCss}}" title="{{getResultSummary}}" />
+				{{#unless status}}pending...{{/unless}}
+				{{#eq status 'forceKillTimeout'}}killed!{{/eq}}
+			</div>
+		{{/each}}
+	</td>
+</tr>

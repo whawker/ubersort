@@ -1,0 +1,11 @@
+# /
+/.git
+/.idea
+/node_modules
+/npm-debug.log
+/.grunt
+/_SpecRunner.html
+/_jasmine.html
+/bower_components
+/coverage
+/quality

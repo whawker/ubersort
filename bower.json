@@ -1,0 +1,15 @@
+{
+    "name": "ubersort",
+    "version": "0.0.1",
+    "homepage": "https://github.com/whawker/ubersort",
+    "description": "Configurable priority based sorting",
+    "ignore": [
+        "node_modules",
+        "bower_components",
+        "test"
+    ],
+    "dependencies": { },
+    "devDependencies": {
+        "almond": "~0.3"
+    }
+}
