@@ -2,6 +2,9 @@
 
 Configurable priority based sorting for arrays of complex objects.
 
+## Using
+`bower install --save ubersort`
+
 ## Built in comparators
 * **text** compare as case sensitive strings
 * **numeric** compare by numeric value
