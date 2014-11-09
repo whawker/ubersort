@@ -31,12 +31,12 @@ myArr.ubersort([
 * **sortConfig** `Array|Object` sorting options (see below)
 
 ##### Sorting options, 
-Array of objects with the following properties, or single object with properties
+Array of objects with the following properties, **or** single object with properties
 ```javascript
 {
-  property: // String, Name of object property to be compared, can be a nested property i.e. myObj.subObj.property
-  comparator: // String|Function, Name of function to be used, or a function definition
-  reverse: // Boolean, If true, sort in descending order, default false
+  property: 'String', // Name of object property to be compared, can be a nested property i.e. myObj.subObj.property
+  comparator: 'String|Function', // Name of function to be used, or a function definition
+  reverse: 'Boolean', // If true, sort in descending order, default false
 }
 ```
 
@@ -52,7 +52,7 @@ myArray.ubersort({ property: 'propName', comparator: 'nearestToMillion' });
 ```
 #### PARAMETERS
 * **name** `String` name of sorting function
-* **sortDefinition** `Function` a sorting function
+* **sortDefinition** `Function` a sorting function, that takes to values to be compared
 
 ## Example
 The order of a football league table has many rules
